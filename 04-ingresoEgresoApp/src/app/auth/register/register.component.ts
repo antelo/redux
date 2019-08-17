@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     public store: Store<AppState>) { }
 
   ngOnInit() {
-    this.store.select('ui').subscribe(ui => {
+    this.subscription = this.store.select('ui').subscribe(ui => {
       this.cargando = ui.isLoading;
     });
   }
